@@ -1,0 +1,238 @@
+/*====================
+======SCROLLUP=====
+======================*/
+i.fa-bglight.active {
+  color: $scrolltopColor;
+  text-align: center;
+  background: $scrolltopBG;
+  border-radius: 50%;
+}
+.fa-square.fa-2x {
+  width: 48px!important;
+  height: 48px!important;
+  line-height: 48px!important;
+}
+a.scrollup {
+  text-decoration: none;
+  outline: 0;
+  display: none;
+}
+.scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 32px;
+  height: 32px;
+}
+
+/*====================
+======Snackbar=====
+======================*/
+
+#snackbar-success {
+  visibility: hidden;
+  min-width: 300px;
+  margin-left: -125px;
+  background-color: rgba(55, 132, 55, 1);
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+}
+#snackbar-success.show {
+  visibility: visible;
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+#snackbar-warning {
+  visibility: hidden;
+  min-width: 300px;
+  margin-left: -125px;
+  background-color: #d73814;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+}
+#snackbar-warning.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+/*================
+====== SWAL ======
+==================*/
+.swal-modal {
+  background-color: #545a5a
+}
+
+.swal-title {
+  color: #e8e8e8
+}
+
+.swal-text {
+  color: #fff;
+}
+
+.swal-button {
+  background-color: #e90000
+}
+
+
+.swal-button:hover {
+  background-color: white !important;
+  color: rgb(43, 43, 43) !important;
+}
+
+.swal-icon--info {
+  border-color: #e90000
+}
+
+.swal-icon--info:after, .swal-icon--info:before {
+  background-color: #e90000
+}
+
+.swal-button--cancel {
+  background-color: #d5d5d5
+}
+
+.swal-button--cancel:hover {
+  background-color: #f3f3f3
+}
+
+
+/*===========================
+====== Blueimp Gallery ======
+=============================*/
+.blueimp-gallery > .indicator {
+  position: absolute;
+  top: auto;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  margin: 0 40px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 10px;
+  display: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.blueimp-gallery > .indicator > li {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 6px 3px 0 3px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid transparent;
+  background: #ccc;
+  background: rgba(255, 255, 255, 0.25) center no-repeat;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #000;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* IE7 fixes */
+* + html .blueimp-gallery > .indicator > li {
+  display: inline;
+}
+
+.blueimp-gallery > .indicator > li:hover,
+.blueimp-gallery > .indicator > .active {
+  background-color: #fff;
+  border-color: #fff;
+  opacity: 1;
+}
+
+.blueimp-gallery > .indicator > li:after {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  content: '';
+  top: -5em;
+  width: 75px;
+  height: 75px;
+  transition: transform 600ms ease-out, opacity 400ms ease-out;
+  transform: translateX(-50%) translateY(0) translateZ(0px);
+  pointer-events: none;
+}
+
+.blueimp-gallery > .indicator > li:hover:after {
+  opacity: 1;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%) translateY(-5px) translateZ(0px);
+}
+
+.blueimp-gallery > .indicator > .active:after {
+  display: none;
+}
+
+.blueimp-gallery-controls > .indicator {
+  display: block;
+  /* Fix z-index issues (controls behind slide element) on Android: */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.blueimp-gallery-single > .indicator {
+  display: none;
+}
+
+/*=========================
+====== COCKIE AKZEPT ======
+===========================*/
+.cc_container .cc_btn {
+background-color: #f1d600 !important;
+color: #000 !important;
+}
+
+.cc_container {
+background: #1f6888 !important;
+color: #fdfdfd !important;
+}
+.cc_container a {
+color: #31a8f0 !important;
+}
